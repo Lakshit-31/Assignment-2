@@ -15,4 +15,10 @@ authRouter.post(
   authController.registerUser,
 );
 
+// login api logic
+authRouter.post(
+  "/login",
+  validationMiddleware(loginSchema),
+  authController.loginUser,
+);
 module.exports = authRouter;

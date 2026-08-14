@@ -35,6 +35,7 @@ app.post("/createStudent", async (req, res) => {
 });
 
 // ********* GET DATA ********
+
 app.get("/getAllStudents", async (req, res) => {
   try {
     const { page, limit } = req.query;
