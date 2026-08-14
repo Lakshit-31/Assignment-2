@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const connectDB = require("./Mongoose/src/config/db.js");
 const authRouter = require("./Mongoose/src/routes/authRoute");
 const addressRouter = require("./Mongoose/src/routes/addressRoute");
-
+const productRouter = require("./Mongoose/src/routes/productRoute");
 const app = express();
 
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 app.use("/auth", authRouter);
 app.use("/auth", addressRouter);
-
+app.use("/api", productRouter);
 connectDB()
   .then(() => {
     app.listen(3000, () => {
